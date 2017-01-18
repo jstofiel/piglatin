@@ -5,27 +5,36 @@
 //     alert ("This is a string!");
 //   }
 // }
+var vowArray =["a","e","i","o","u"];
+
+function firstletterCheck(firstLetter) {
+  alert(firstLetter);
+  if (firstLetter === vowArray[0]){
+     alert("these letters match");
+  }
+}
 
 
-$(document).ready(function(){
+
+
+$(document).ready(function() {
 
  $("form#englishInput").submit(function(event) {
    event.preventDefault();
+
+   var result = $("input#english").val();
+   var firstLetter = result.charAt(0);
+
+   firstletterCheck(firstLetter);
+
+  //  alert(firstLetter);
+  //  if (firstLetter === vowArray[0]){
+  //     alert("these letters match");
+  //  }
+
+
  });
-   var result= $("input#english").val();
-
-  vowArray =["a","e","i","o","u"]
-  alert(vowArray[0])
-
-  var firstLetter = result.charAt(0);
-  alert(firstLetter);
-
-  var vowStart = function(firstLetter,vowArray) {
-
-    if (firstLetter === vowArray[0])
-    ("vowStart").show
-  }
-  });
+});
 
 
 
