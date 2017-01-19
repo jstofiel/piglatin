@@ -11,6 +11,9 @@ var vowCheck = function(firstLetter_) {
   if (vowArray.indexOf(firstLetter_) > -1) {
     return true;
   }
+   else {
+    return false;
+  }
 }
 
 $(document).ready(function() {
@@ -24,6 +27,11 @@ $(document).ready(function() {
    var result = vowCheck(firstLetter);
 
    if (result === true) {
+     $(".result").show();
+     $("#answer").text(result);
+
+   }
+   if (result === false) {
      $(".result").show();
      $("#answer").text(result);
 
