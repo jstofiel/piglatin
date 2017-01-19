@@ -15,11 +15,6 @@ var vowCheck = function(firstLetter_) {
     return false;
   }
 }
- // var vowOutput = function(lastLetters_){
- //   if vowCheck = true {
- //     return lastletters_ + ay;
- //   }
- // }
 
 $(document).ready(function() {
 
@@ -28,7 +23,8 @@ $(document).ready(function() {
 
    var input = $("input#english").val();
    var firstLetter = input.charAt(0);
-  //  var lastLetters = input.slice(length-1);
+   var lastLetter = input.slice(1) + input.slice(4, 0);
+
 
    var result = vowCheck(firstLetter);
 
@@ -39,28 +35,9 @@ $(document).ready(function() {
    }
    if (result === false) {
      $(".result").show();
-     $("#answer").text(result);
+     $("#answer").text(lastLetter+"ay");
 
    }
-  //  var output = vowOutput(lastLetters)
-
-  //  alert(firstLetter);
-  //  if (firstLetter === vowArray[0]){
-  //     alert("these letters match");
-  //  }
-
 
  });
 });
-
-
-
-
-
-
-
-// var felix = function(parameter1, parameter2) {
-//   return parameter1 + parameter2;
-// }
-//
-// felix(2,3);
