@@ -5,27 +5,29 @@
 //     alert ("This is a string!");
 //   }
 // }
-var vowArray =["a","e","i","o","u"];
+var vowArray = ['a', 'e', 'i', 'o', 'u'];
 
-function firstletterCheck(firstLetter) {
-  alert(firstLetter);
-  if (firstLetter === vowArray[0]){
-     alert("these letters match");
+var vowCheck = function(firstLetter_) {
+  if (vowArray.indexOf(firstLetter_) > -1) {
+    return true;
   }
 }
-
-
-
 
 $(document).ready(function() {
 
  $("form#englishInput").submit(function(event) {
    event.preventDefault();
 
-   var result = $("input#english").val();
-   var firstLetter = result.charAt(0);
+   var input = $("input#english").val();
+   var firstLetter = input.charAt(0);
 
-   firstletterCheck(firstLetter);
+   var result = vowCheck(firstLetter);
+
+   if (result === true) {
+     $(".result").show();
+     $("#answer").text(result);
+
+   }
 
   //  alert(firstLetter);
   //  if (firstLetter === vowArray[0]){
@@ -35,6 +37,7 @@ $(document).ready(function() {
 
  });
 });
+
 
 
 
